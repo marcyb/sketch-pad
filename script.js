@@ -1,4 +1,8 @@
 function drawGrid(size = 16) {
+  if (size > 100) {
+    size = 100;
+  }
+
   const container = document.getElementById('container');
   const pixel = document.createElement('div');
   pixel.classList.add('pixel');
@@ -16,3 +20,12 @@ function drawGrid(size = 16) {
 onload = () => {
   drawGrid();
 }
+
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', () => {
+  const container = document.getElementById('container');
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+  drawGrid(prompt('Enter the size of the grid (max 100):'));
+});

@@ -1,3 +1,24 @@
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(200, 45, 45);
+  color: white;
+  border-radius: 10px;
+}
+
+#reset {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: rgb(200, 45, 45);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 #container {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,10 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 960px;
+  height: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 15px outset rgb(200, 45, 45);
+  border-radius: 10px;
+}

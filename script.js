@@ -1,3 +1,16 @@
+function darkenPixel(pixel) {
+  const color = pixel.style.backgroundColor;
+  if (color === '') {
+    pixel.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+  }
+  else if (color.startsWith('rgba')) {
+    const alpha = parseFloat(color.slice(-4, -1));
+    if (alpha < 1) {
+      pixel.style.backgroundColor = `rgba(0, 0, 0, ${alpha + 0.1})`;
+    }
+  }
+}
+
 function drawGrid(size = 16) {
   if (size > 100) {
     size = 100;
@@ -11,7 +24,7 @@ function drawGrid(size = 16) {
   for (let i = 0; i < size * size; i++) {
     const newPixel = pixel.cloneNode();
     newPixel.addEventListener('mouseover', () => {
-      newPixel.style.backgroundColor = 'black';
+      darkenPixel(newPixel);
     });
     container.appendChild(newPixel);
   }
